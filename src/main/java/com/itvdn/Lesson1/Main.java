@@ -8,9 +8,38 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        try (var connection = ConnectionManager.open()) {
-            System.out.println(connection.getCatalog());// returns our catalog postgres
-            System.out.println(connection.getClientInfo());// can see JDBC driver
+        String createStudentTableSql = """
+                CREATE TABLE IF NOT EXISTS students (
+                id int PRIMARY KEY,
+                FIRST_NAME varchar(255) NOT NULL,
+                LAST_NAME varchar(255) NOT NULL,
+                EMAIL varchar(255) NOT NULL
+                 );
+
+                """;
+        String insertStudentsSql= """
+                INSERT INTO students (id, FIRST_NAME, LAST_NAME, EMAIL) 
+                VALUES(1, 'George', 'Smith', 'abcdef@gmail.com' )
+                """;
+        String createTeachersTableSql = """
+                CREATE TABLE IF NOT EXISTS teachers (
+                id int PRIMARY KEY,
+                FIRST_NAME varchar(255) NOT NULL,
+                LAST_NAME varchar(255) NOT NULL,
+                LESSON_NAME varchar(255) NOT NULL
+                 );
+                """;
+        String dropTableTeachersSql= """
+                DROP TABLE IF EXISTS teachers;
+                """;
+        try (var connection = ConnectionManager.open();
+             var statement = connection.createStatement()) {
+//            statement.execute(createStudentTableSql);
+//            statement.executeUpdate(insertStudentsSql);
+//            statement.execute(createTeachersTableSql);
+            statement.execute(dropTableTeachersSql);
+//            System.out.println(connection.getCatalog());// returns our catalog postgres
+//            System.out.println(connection.getClientInfo());// can see JDBC driver
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
