@@ -1,4 +1,4 @@
-package com.itvdn.Lesson1.util;
+package com.itvdn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

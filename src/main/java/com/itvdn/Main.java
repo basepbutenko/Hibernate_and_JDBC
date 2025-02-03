@@ -1,8 +1,4 @@
-package com.itvdn.Lesson1;
-
-import com.itvdn.Lesson1.util.ConnectionManager;
-
-import java.sql.DriverManager;
+package com.itvdn;
 
 import java.sql.SQLException;
 

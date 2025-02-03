@@ -1,4 +1,4 @@
-package com.itvdn.Lesson1.util;
+package com.itvdn;
 
 import java.io.IOException;
 import java.util.Properties;

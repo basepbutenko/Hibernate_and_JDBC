@@ -1,10 +1,6 @@
 package Lesson2;
 
 import Lesson2.dao.StudentDao;
-import Lesson2.entity.Student;
-import com.itvdn.Lesson1.util.ConnectionManager;
-
-import java.sql.SQLException;
 
 public class JdbcAdvanced {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package Lesson2.dao;
 
 import Lesson2.entity.Student;
-import com.itvdn.Lesson1.util.ConnectionManager;
+import com.itvdn.ConnectionManager;
 
 import java.sql.SQLException;
 import java.sql.Statement;

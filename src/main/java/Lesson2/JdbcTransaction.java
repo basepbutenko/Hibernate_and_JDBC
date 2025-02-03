@@ -1,6 +1,6 @@
 package Lesson2;
 
-import com.itvdn.Lesson1.util.ConnectionManager;
+import com.itvdn.ConnectionManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
