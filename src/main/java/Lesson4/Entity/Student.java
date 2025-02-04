@@ -1,7 +1,11 @@
 package Lesson4.Entity;
 
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
+@Entity
 
 @Builder
 
@@ -11,10 +15,16 @@ import lombok.*;
 @NoArgsConstructor
 
 @Data
-public class Student  {
- //  @Id
+@Table(name = "students", schema = "public")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String FirstName;
-    private String LastName;
-    private String Email;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    private String email;
+    @OneToMany(mappedBy = "student")
+    private List<Enrollment> enrollments;
 }
