@@ -13,8 +13,8 @@
     <property name="format_sql"> true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
 
-    <mapping class="Lesson4.Entity.Student"/>
-    <mapping class="Lesson4.Entity.Courses"/>
-    <mapping class="Lesson4.Entity.Enrollment"/>
+    <mapping class="Lesson5.Entity.Student"/>
+    <mapping class="Lesson5.Entity.Courses"/>
+    <mapping class="Lesson5.Entity.Enrollment"/>
   </session-factory>
 </hibernate-configuration>
