@@ -3,6 +3,9 @@ package Lesson6.Entity;
 import Lesson5.Entity.Enrollment;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -28,5 +31,7 @@ public class Student {
     private String email;
     @OneToMany(mappedBy = "student", fetch=FetchType.LAZY)
     @ToString.Exclude
+//    @BatchSize(size=3)
+//    @Fetch(FetchMode.SUBSELECT)
     private List<Lesson6.Entity.Enrollment> enrollments;
 }

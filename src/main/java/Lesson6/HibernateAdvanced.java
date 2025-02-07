@@ -11,7 +11,7 @@ public class HibernateAdvanced {
         try (var sessionFactory = configuration.buildSessionFactory();
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
-            var result = session.createQuery("select s  from Student s", Student.class ).list();
+            var result = session.createQuery("select s  from Student s join fetch s.enrollments", Student.class ).list();
             result.stream().map (Student::getEnrollments).forEach(System.out::println);
 
             session.getTransaction().commit();
