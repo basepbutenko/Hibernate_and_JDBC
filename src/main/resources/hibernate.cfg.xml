@@ -12,6 +12,8 @@
     <property name="show_sql"> true</property>
     <property name="format_sql"> true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+     <property name="hibernate.cache.region.factory_class"> org.hibernate.Cache.jcache.internal.JCacheReg ionFactory</property>
 
     <mapping class="Lesson6.Entity.Student"/>
     <mapping class="Lesson6.Entity.Courses"/>
